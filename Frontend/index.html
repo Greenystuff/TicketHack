@@ -4,37 +4,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
   <title>TicketHack</title>
-</head>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css" />
 </head>
 
 <div id="includedContent"></div>
 
 <body>
-
-  <div id="bodyContainer">
-    <h1>Explore the world effortlessly by train!</h1>
-    <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
-  </div>
-</body>
-
-</html>
-
-<body>
   <!--Barre de menus-->
-  <div id="header">
-    <h2>TicketHack</h2>
-    <p>Carts</p>
-    <p>Bookings</p>
+  <div id="header-bar">
+    <div>
+      <h2 id="logo-img">TicketHack</h2>
+    </div>
+    <div id="nav">
+      <p class="item-nav">Carts</p>
+      <p class="item-nav">Bookings</p>
+    </div>
   </div>
+  <div id="bodyContainer">
+    <div id="title-container">
+      <h1>Explore the world effortlessly by train!</h1>
+      <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
+    </div>
+    <div id="cards-container">
+      <div id="search-card">
+        <input id="departure-input" type="text" placeholder="Departure">
+        <input id="arrival-input" type="text" placeholder="Arrival">
 
-  <script src="script.js"></script>
+        <input id="calandar-input" type="date" />
+
+        <button id="search-btn" type="button">Search</button>
+      </div>
+    </div>
+  </div>
 </body>
+
+<script src="script.js"></script>
+
 
 </html>
