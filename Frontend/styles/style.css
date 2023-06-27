@@ -91,7 +91,7 @@ h3 {
 #calandar-input {
   border: none;
   width: 80%;
-  padding-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 #search-btn {
