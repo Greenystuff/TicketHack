@@ -54,6 +54,7 @@ h3 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 #search-card {
@@ -78,4 +79,24 @@ h3 {
   margin-left: 60px;
   height: 300px;
   width: 250px;
+}
+
+#train-img {
+  width: 100px;
+  opacity: 0.8;
+}
+
+hr {
+  border: 1px solid #4D9980;
+  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#desc-trip-txt {
+  font-size: 12px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-stretch: expanded;
 }
