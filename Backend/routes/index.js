@@ -16,8 +16,6 @@ router.post('/trip-search', (req, res) => {
         let tabDate = new Date(trips[i].date);
         tabDate = tabDate.toString().slice(0, 16)
         givenDate = givenDate.toString().slice(0, 16)
-        console.log("Date du voyage trouvé : " + tabDate)
-        console.log("Date du voyage demandée : " + givenDate)
         if (tabDate === givenDate) {
 
           newTab.push(trips[i]);
