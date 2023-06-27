@@ -44,6 +44,29 @@ document.querySelector("#search-btn").addEventListener("click", () => {
             <button class="book-btn">Book</button>
           </div>`;
         }
+        let bookBtn = document.querySelectorAll('.book-btn');
+        for (let i = 0; i < bookBtn.length; i++) {
+          let departureValue = bookBtn[i].parentNode.firstElementChild.textContent.split(' ')[0];
+          let arrivalValue = bookBtn[i].parentNode.firstElementChild.textContent.split(' ')[2];
+          let date = document.querySelector("#calandar-input").value;
+          console.log("departure : " + departureValue);
+          console.log("arrival : " + arrivalValue);
+          console.log("date : " + date);
+          bookBtn[i].addEventListener('click', () => {
+            fetch("http://localhost:3000/add-trip", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                departure: departureValue,
+                arrival: arrivalValue,
+                date: dateValue,
+              }),
+            }).then(resp => resp.json())
+              .then(data => {
+
+              })
+          })
+        }
 
       }
     });

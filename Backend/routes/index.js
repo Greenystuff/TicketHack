@@ -8,29 +8,32 @@ router.post('/trip-search', (req, res) => {
       { departure: new RegExp(req.body.departure, 'i') },
       { arrival: new RegExp(req.body.arrival, 'i') }
     ]
-  })
-    //Trip.find({ departure: req.body.departure }, { arrival: req.body.arrival }, { date: req.body.date })
-    .then(trips => {
-      if (trips.length !== 0) {
-        let givenDate = new Date();
-        let newTab = [];
-        for (let i = 0; i < trips.length; i++) {
-          let tabDate = new Date(trips[i].date);
-          if (tabDate >= givenDate) {
-            newTab.push(trips[i]);
-          }
+  }).then(trips => {
+    if (trips.length !== 0) {
+      let givenDate = new Date();
+      let newTab = [];
+      for (let i = 0; i < trips.length; i++) {
+        let tabDate = new Date(trips[i].date);
+        tabDate = tabDate.toString().slice(0, 16)
+        givenDate = givenDate.toString().slice(0, 16)
+        console.log("Date du voyage trouvé : " + tabDate)
+        console.log("Date du voyage demandée : " + givenDate)
+        if (tabDate === givenDate) {
+
+          newTab.push(trips[i]);
         }
-        res.json({
-          result: true,
-          trips: newTab
-        })
-      } else {
-        res.json({
-          result: false,
-          error: 'Aucun trajet trouvé'
-        })
       }
-    })
+      res.json({
+        result: true,
+        trips: newTab
+      })
+    } else {
+      res.json({
+        result: false,
+        error: 'Aucun trajet trouvé'
+      })
+    }
+  })
 });
 
 module.exports = router;
