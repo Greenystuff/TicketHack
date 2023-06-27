@@ -21,17 +21,30 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     }),
   })
     .then((data) => data.json())
-    .then((trips) => {
-      if (!trips.result) {
-        document.querySelector("#train-img").src = "images/notfound.png";
-        document.querySelector("#desc-trip-txt").textContent =
-          "Aucun trajet trouvé...";
+    .then((data) => {
+      const resultCard = document.querySelector("#result-card");
+      if (!data.result) {
+        resultCard.innerHTML = `
+        <img id="train-img" src="images/notfound.png" alt="image de loupe">
+        <hr>
+        <span id="desc-trip-txt">Aucun trajet trouvé...</span>`
       } else {
-        document.querySelector("#result-container").innerHTML += `
-          <span>Paris > Lyon</span>
-          <span>18:48</span>
-          <span>53€</span>
-          <button class="book-btn">Book</button>`;
+
+        var child = resultCard.lastElementChild;
+        while (child) {
+          resultCard.removeChild(child);
+          child = resultCard.lastElementChild;
+        }
+        for (let i = 0; i < data.trips.length; i++) {
+          resultCard.innerHTML += `
+          <div class="result-container">
+            <span>${data.trips[i].departure} > ${data.trips[i].arrival}</span>
+            <span>18:48</span>
+            <span>${data.trips[i].price}€</span>
+            <button class="book-btn">Book</button>
+          </div>`;
+        }
+
       }
     });
 });

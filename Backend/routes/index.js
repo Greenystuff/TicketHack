@@ -5,8 +5,8 @@ const Trip = require('../models/trips')
 router.post('/trip-search', (req, res) => {
   Trip.find({
     $and: [
-      { departure: req.body.departure },
-      { arrival: req.body.arrival }
+      { departure: new RegExp(req.body.departure, 'i') },
+      { arrival: new RegExp(req.body.arrival, 'i') }
     ]
   })
     //Trip.find({ departure: req.body.departure }, { arrival: req.body.arrival }, { date: req.body.date })
