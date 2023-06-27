@@ -36,10 +36,11 @@ document.querySelector("#search-btn").addEventListener("click", () => {
           child = resultCard.lastElementChild;
         }
         for (let i = 0; i < data.trips.length; i++) {
+          let hour = data.trips[i].date.split('T')[1].slice(0, 5);
           resultCard.innerHTML += `
           <div class="result-container">
             <span>${data.trips[i].departure} > ${data.trips[i].arrival}</span>
-            <span>18:48</span>
+            <span>${hour}</span>
             <span>${data.trips[i].price}€</span>
             <button class="book-btn">Book</button>
           </div>`;
@@ -48,22 +49,31 @@ document.querySelector("#search-btn").addEventListener("click", () => {
         for (let i = 0; i < bookBtn.length; i++) {
           let departureValue = bookBtn[i].parentNode.firstElementChild.textContent.split(' ')[0];
           let arrivalValue = bookBtn[i].parentNode.firstElementChild.textContent.split(' ')[2];
-          let date = document.querySelector("#calandar-input").value;
-          console.log("departure : " + departureValue);
-          console.log("arrival : " + arrivalValue);
-          console.log("date : " + date);
+          let dateValue = document.querySelector("#calandar-input").value;
+          let hourValue = bookBtn[i].parentNode.firstElementChild.nextElementSibling.textContent;
+          let priceValue = bookBtn[i].parentNode.firstElementChild.nextElementSibling.nextElementSibling.textContent.slice(0, -1);
+
+
+          // console.log("Departure : " + departureValue);
+          // console.log("Arrival : " + arrivalValue);
+          // console.log("Date : " + date);
+          // console.log("Heure : " + hourValue);
+          // console.log("Prix : " + priceValue);
           bookBtn[i].addEventListener('click', () => {
-            fetch("http://localhost:3000/add-trip", {
+            fetch("http://localhost:3000/users/add-trip", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
                 departure: departureValue,
                 arrival: arrivalValue,
                 date: dateValue,
+                hour: hourValue,
+                price: priceValue,
+                paid: false
               }),
             }).then(resp => resp.json())
-              .then(data => {
-
+              .then(() => {
+                window.location.assign('/Frontend/carts.html')
               })
           })
         }

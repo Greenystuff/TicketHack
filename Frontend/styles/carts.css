@@ -1,0 +1,72 @@
+#cartsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F1F2;
+  background-size: cover;
+  height: 92vh;
+}
+
+#carts-card {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-height: 50%;
+  height: fit-content;
+  width: 50%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+#total-field {
+  background-color: #01153F;
+  width: 50%;
+  height: 10%;
+  border-radius: 0px 0px 10px 10px;
+}
+
+#cart-title {
+  margin-top: 20px;
+  color: black;
+}
+
+#carts-card-nb {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-height: 50%;
+  height: fit-content;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.nobooking-txt {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.carttrip-container {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #F0F1F2;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 95%;
+}
+
+.delete-trip-btn {
+  border-radius: 5px;
+  background-color: #469E86;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
