@@ -2,38 +2,32 @@ var express = require('express');
 var router = express.Router();
 const Trip = require('../models/trips')
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.post('/trip-search', function (req, res) {
-  Trip.find({ departure: req.body.departure })
-    .then(departure => {
-      if (departure) {
-        Trip.find({ arrival: req.body.arrival }).then(arrival => {
-          if (arrival) {
-            Trip.find({ date: req.body.date }).then(date => {
-              if (date) {
-                // écrire la réponse 200 OK
-              } else {
-                res.json({
-                  result: false,
-                  error: 'La date entrée n\'est pas correcte'
-                })
-              }
-            })
-          } else {
-            res.json({
-              result: false,
-              error: 'Cette ville de d\'arrivée n\'existe pas'
-            })
+router.post('/trip-search', (req, res) => {
+  Trip.find({
+    $and: [
+      { departure: req.body.departure },
+      { arrival: req.body.arrival }
+    ]
+  })
+    //Trip.find({ departure: req.body.departure }, { arrival: req.body.arrival }, { date: req.body.date })
+    .then(trips => {
+      if (trips.length !== 0) {
+        let givenDate = new Date();
+        let newTab = [];
+        for (let i = 0; i < trips.length; i++) {
+          let tabDate = new Date(trips[i].date);
+          if (tabDate >= givenDate) {
+            newTab.push(trips[i]);
           }
+        }
+        res.json({
+          result: true,
+          trips: newTab
         })
       } else {
         res.json({
           result: false,
-          error: 'Cette ville de départ n\'existe pas'
+          error: 'Aucun trajet trouvé'
         })
       }
     })

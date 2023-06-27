@@ -101,6 +101,7 @@ h3 {
   width: 90%;
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 #result-card {
@@ -144,4 +145,22 @@ hr {
   width: 100%;
   text-align: center;
   font-stretch: expanded;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #F0F1F2;
+  padding: 5px;
+  border-radius: 3px;
+  width: 90%;
+}
+
+.book-btn {
+  background-color: #4D9980;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
