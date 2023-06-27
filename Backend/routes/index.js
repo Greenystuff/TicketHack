@@ -17,7 +17,6 @@ router.post('/trip-search', (req, res) => {
         tabDate = tabDate.toString().slice(0, 16)
         givenDate = givenDate.toString().slice(0, 16)
         if (tabDate === givenDate) {
-
           newTab.push(trips[i]);
         }
       }
