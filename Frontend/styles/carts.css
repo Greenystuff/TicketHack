@@ -91,3 +91,7 @@
   height: 30px;
   width: 120px;
 }
+
+#trip-id {
+  display: none;
+}
