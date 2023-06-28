@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionString = 'mongodb+srv://davidmeunier:1odk6pShD4kvNubN@capsuledb.but3pie.mongodb.net/tickethack';
+const connectionString = process.env.CONNECTION_STRING;
 
 mongoose.set("strictQuery", true);
 
