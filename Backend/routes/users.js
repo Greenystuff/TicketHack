@@ -3,7 +3,7 @@ var router = express.Router();
 const userTrip = require('../models/userTrips')
 
 router.get('/trips', (req, res) => {
-  userTrip.find().then(trips => {
+  userTrip.find({ paid: false }).then(trips => {
     res.json({
       result: true,
       trips

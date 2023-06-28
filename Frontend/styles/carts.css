@@ -70,3 +70,24 @@
   color: white;
   cursor: pointer;
 }
+
+#total-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#total-txt {
+  color: white;
+}
+
+#purchase-btn {
+  border-radius: 5px;
+  background-color: #469E86;
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  width: 120px;
+}
