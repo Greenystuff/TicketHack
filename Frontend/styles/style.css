@@ -87,18 +87,27 @@ a {
   font-size: 15px;
   border: 0px;
   width: 100%;
+  background-color: #F0F1F2;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 #arrival-input {
   font-size: 15px;
   border: 0px;
   width: 100%;
+  background-color: #F0F1F2;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 #calandar-input {
   border: none;
   width: 80%;
   margin-bottom: 80px;
+  background-color: #F0F1F2;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 #search-btn {
@@ -142,8 +151,8 @@ hr {
   height: 1px;
   background-color: black;
   width: 100%;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #desc-trip-txt {

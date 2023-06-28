@@ -19,6 +19,7 @@
   height: fit-content;
   width: 50%;
   border-radius: 10px 10px 0px 0px;
+  padding-bottom: 10px;
 }
 
 #total-field {
@@ -76,11 +77,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #total-txt {
   color: white;
+  margin-left: 40px;
 }
 
 #purchase-btn {
@@ -91,6 +93,7 @@
   cursor: pointer;
   height: 30px;
   width: 120px;
+  margin-right: 40px;
 }
 
 .trip-id {

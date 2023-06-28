@@ -43,6 +43,6 @@ fetch('https://tickethack-backend-henna.vercel.app/users/trips-purchased')
       }
       tripsContainer.innerHTML += `
       <hr>
-      <p>Enjoy yout travel with TicketHack</p>`
+      <span id="book-sentence">Enjoy yout travel with TicketHack !</span>`
     }
   })
