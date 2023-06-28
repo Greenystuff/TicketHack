@@ -19,14 +19,23 @@ fetch('http://localhost:3000/users/trips')
         </div>`;
       let total = 0;
       for (let i = 0; i < data.trips.length; i++) {
+        data.trips[i].date = data.trips[i].date.replace('T00:00', 'T' + data.trips[i].hour)
+      }
+      data.trips.sort((x, y) => {
+        x = new Date(x.date),
+          y = new Date(y.date);
+        return x - y;
+      });
+      for (let i = 0; i < data.trips.length; i++) {
+        console.log("Dates du trajet : " + data.trips[i].date)
         total += data.trips[i].price;
         document.querySelector('#carts-card').innerHTML +=
           `<div class="carttrip-container">
-            <span>${data.trips[i].departure} > ${data.trips[i].arrival}</span>
-            <span>${data.trips[i].hour}</span>
-            <span>${data.trips[i].price}€</span>
+            <span class="trip-column">${data.trips[i].departure} > ${data.trips[i].arrival}</span>
+            <span class="hour-column">${data.trips[i].hour}</span>
+            <span class="price-column">${data.trips[i].price}€</span>
             <button class="delete-trip-btn">X</button>
-            <span id="trip-id">${data.trips[i]._id}</span>
+            <span class="trip-id">${data.trips[i]._id}</span>
           </div>`
       }
       document.querySelector('#total-txt').textContent = "Total : " + total + " €"
@@ -48,7 +57,7 @@ fetch('http://localhost:3000/users/trips')
               let actualPrice = deleteBtn[i].parentNode.firstElementChild.nextElementSibling.nextElementSibling.textContent.slice(0, -1);
               total -= actualPrice;
               document.querySelector('#total-txt').textContent = "Total : " + total + " €"
-              let container = document.querySelectorAll('#carts-card');
+              let container = document.querySelectorAll('#carttrip-container');
               if (container.length === 0) {
                 cardContainer.innerHTML =
                   `<div id="carts-card-nb">

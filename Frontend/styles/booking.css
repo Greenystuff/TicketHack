@@ -17,7 +17,7 @@
   background-color: white;
   max-height: 50%;
   height: fit-content;
-  width: 50%;
+  width: 70%;
   border-radius: 10px;
 }
 
@@ -30,9 +30,25 @@
   border-radius: 5px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   background-color: #F0F1F2;
   padding: 5px;
   margin-bottom: 10px;
   width: 95%;
+}
+
+.trip-column {
+  width: 30%;
+}
+
+.time-column {
+  width: 20%;
+}
+
+.price-column {
+  width: 20%;
+}
+
+.delai-column {
+  width: 30%;
+  text-align: end;
 }

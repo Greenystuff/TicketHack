@@ -69,6 +69,7 @@
   border: none;
   color: white;
   cursor: pointer;
+
 }
 
 #total-field {
@@ -92,6 +93,18 @@
   width: 120px;
 }
 
-#trip-id {
+.trip-id {
   display: none;
+}
+
+.trip-column {
+  width: 30%;
+}
+
+.hour-column {
+  width: 20%;
+}
+
+.price-column {
+  width: 20%;
 }
