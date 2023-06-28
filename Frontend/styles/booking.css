@@ -1,0 +1,32 @@
+#booking-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f1f2;
+  background-size: cover;
+  height: 92vh;
+}
+#bookings-card {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-height: 50%;
+  height: fit-content;
+  width: 50%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+#cart-title {
+  margin-top: 20px;
+  color: black;
+}
