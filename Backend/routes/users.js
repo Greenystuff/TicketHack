@@ -32,4 +32,21 @@ router.post('/add-trip', (req, res) => {
   }
 });
 
+router.delete('/trips', (req, res) => {
+  userTrip.deleteOne({ _id: req.body._id }).then(() => {
+    res.json({
+      result: true
+    })
+  })
+})
+
+router.patch('/trips', (req, res) => {
+  userTrip.updateMany({}, { paid: true }).then((data) => {
+    res.json({
+      result: true,
+      response: data
+    })
+  })
+})
+
 module.exports = router;
