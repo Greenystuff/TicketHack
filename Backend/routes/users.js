@@ -11,6 +11,15 @@ router.get('/trips', (req, res) => {
   })
 })
 
+router.get('/trips-purchased', (req, res) => {
+  userTrip.find({ paid: true }).then(trips => {
+    res.json({
+      result: true,
+      trips
+    })
+  })
+})
+
 router.post('/add-trip', (req, res) => {
   if (req.body.departure && req.body.arrival && req.body.date && req.body.hour && req.body.price && req.body.paid != undefined) {
     const newTrip = new userTrip({

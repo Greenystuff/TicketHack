@@ -29,7 +29,7 @@ fetch('http://localhost:3000/users/trips')
             <span id="trip-id">${data.trips[i]._id}</span>
           </div>`
       }
-      document.querySelector('#total-txt').textContent = total + " €"
+      document.querySelector('#total-txt').textContent = "Total : " + total + " €"
 
       let deleteBtn = document.querySelectorAll('.delete-trip-btn');
       for (let i = 0; i < deleteBtn.length; i++) {
@@ -47,7 +47,7 @@ fetch('http://localhost:3000/users/trips')
               deleteBtn[i].parentNode.remove();
               let actualPrice = deleteBtn[i].parentNode.firstElementChild.nextElementSibling.nextElementSibling.textContent.slice(0, -1);
               total -= actualPrice;
-              document.querySelector('#total-txt').textContent = total + " €"
+              document.querySelector('#total-txt').textContent = "Total : " + total + " €"
               let container = document.querySelectorAll('#carts-card');
               if (container.length === 0) {
                 cardContainer.innerHTML =

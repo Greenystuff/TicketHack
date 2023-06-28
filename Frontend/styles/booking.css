@@ -7,6 +7,7 @@
   background-size: cover;
   height: 92vh;
 }
+
 #bookings-card {
   overflow: auto;
   display: flex;
@@ -17,16 +18,21 @@
   max-height: 50%;
   height: fit-content;
   width: 50%;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px;
 }
 
-p {
-  display: flex;
-  justify-content: center;
-  margin-top: 150px;
-}
-
-#cart-title {
+#book-title {
   margin-top: 20px;
   color: black;
+}
+
+.booktrip-container {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #F0F1F2;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 95%;
 }

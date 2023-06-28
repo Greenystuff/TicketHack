@@ -23,7 +23,12 @@ h3 {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 #logo-img {
+  color: #469E86;
   margin-left: 20px;
 }
 
@@ -79,11 +84,13 @@ h3 {
 }
 
 #departure-input {
+  font-size: 15px;
   border: 0px;
   width: 100%;
 }
 
 #arrival-input {
+  font-size: 15px;
   border: 0px;
   width: 100%;
 }
