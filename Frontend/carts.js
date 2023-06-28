@@ -75,7 +75,7 @@ fetch('https://tickethack-backend-henna.vercel.app/users/trips')
           method: "PATCH",
           headers: { "Content-Type": "application/json" }
         }).then(resp => resp.json())
-          .then(() => window.location.assign('/Frontend/bookings.html'))
+          .then(() => window.location.assign('/bookings.html'))
       })
     }
   })

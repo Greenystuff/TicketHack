@@ -73,7 +73,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
               }),
             }).then(resp => resp.json())
               .then(() => {
-                window.location.assign('/Frontend/carts.html')
+                window.location.assign('/carts.html')
               })
           })
         }
