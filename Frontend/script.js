@@ -11,7 +11,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
   let departureValue = document.querySelector("#departure-input").value;
   let arrivalValue = document.querySelector("#arrival-input").value;
   let dateValue = document.querySelector("#calandar-input").value;
-  fetch("http://localhost:3000/trip-search", {
+  fetch("https://tickethack-backend-henna.vercel.app/trip-search", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -60,7 +60,7 @@ document.querySelector("#search-btn").addEventListener("click", () => {
           // console.log("Heure : " + hourValue);
           // console.log("Prix : " + priceValue);
           bookBtn[i].addEventListener('click', () => {
-            fetch("http://localhost:3000/users/add-trip", {
+            fetch("https://tickethack-backend-henna.vercel.app/users/add-trip", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

@@ -1,6 +1,6 @@
 let elemNbr = 0;
 
-fetch('http://localhost:3000/users/trips')
+fetch('https://tickethack-backend-henna.vercel.app/users/trips')
   .then(response => response.json())
   .then(data => {
     const cardContainer = document.querySelector('#cartsContainer');
@@ -47,7 +47,7 @@ fetch('http://localhost:3000/users/trips')
         deleteBtn[i].addEventListener('click', () => {
           let _id = deleteBtn[i].parentNode.lastElementChild.textContent;
           console.log("Id relevé : " + _id)
-          fetch(`http://localhost:3000/users/trips`, {
+          fetch(`https://tickethack-backend-henna.vercel.app/users/trips`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -71,7 +71,7 @@ fetch('http://localhost:3000/users/trips')
         })
       }
       document.querySelector('#purchase-btn').addEventListener('click', () => {
-        fetch('http://localhost:3000/users/trips', {
+        fetch('https://tickethack-backend-henna.vercel.app/users/trips', {
           method: "PATCH",
           headers: { "Content-Type": "application/json" }
         }).then(resp => resp.json())

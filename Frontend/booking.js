@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/users/trips-purchased')
+fetch('https://tickethack-backend-henna.vercel.app/users/trips-purchased')
   .then(resp => resp.json())
   .then(data => {
     const tripsContainer = document.querySelector('#bookings-card');
