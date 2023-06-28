@@ -1,3 +1,5 @@
+let elemNbr = 0;
+
 fetch('http://localhost:3000/users/trips')
   .then(response => response.json())
   .then(data => {
@@ -9,6 +11,7 @@ fetch('http://localhost:3000/users/trips')
           <span class="nobooking-txt">Why not plan a trip ?</span>
         </div>`;
     } else {
+      elemNbr = data.trips.length;
       cardContainer.innerHTML =
         `<div id="carts-card">
           <h3 id="cart-title">My cart</h3>
@@ -27,13 +30,12 @@ fetch('http://localhost:3000/users/trips')
         return x - y;
       });
       for (let i = 0; i < data.trips.length; i++) {
-        console.log("Dates du trajet : " + data.trips[i].date)
         total += data.trips[i].price;
         document.querySelector('#carts-card').innerHTML +=
           `<div class="carttrip-container">
             <span class="trip-column">${data.trips[i].departure} > ${data.trips[i].arrival}</span>
             <span class="hour-column">${data.trips[i].hour}</span>
-            <span class="price-column">${data.trips[i].price}€</span>
+            <span class="price-column">${data.trips[i].price} €</span>
             <button class="delete-trip-btn">X</button>
             <span class="trip-id">${data.trips[i]._id}</span>
           </div>`
@@ -54,11 +56,11 @@ fetch('http://localhost:3000/users/trips')
           }).then(resp => resp.json())
             .then(() => {
               deleteBtn[i].parentNode.remove();
+              elemNbr--;
               let actualPrice = deleteBtn[i].parentNode.firstElementChild.nextElementSibling.nextElementSibling.textContent.slice(0, -1);
               total -= actualPrice;
               document.querySelector('#total-txt').textContent = "Total : " + total + " €"
-              let container = document.querySelectorAll('#carttrip-container');
-              if (container.length === 0) {
+              if (elemNbr === 0) {
                 cardContainer.innerHTML =
                   `<div id="carts-card-nb">
                     <span class="nobooking-txt">No booking yet</span>

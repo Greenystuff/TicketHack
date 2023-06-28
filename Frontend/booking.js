@@ -26,7 +26,7 @@ fetch('http://localhost:3000/users/trips-purchased')
             `<div class="booktrip-container">
               <span class="trip-column">${data.trips[i].departure} > ${data.trips[i].arrival}</span>
               <span class="time-column">${data.trips[i].hour}</span>
-              <span class="price-column">${data.trips[i].price}€</span>
+              <span class="price-column">${data.trips[i].price} €</span>
               <span class="delai-column">Travel passed</span>
             </div>`
         } else {
@@ -36,7 +36,7 @@ fetch('http://localhost:3000/users/trips-purchased')
             `<div class="booktrip-container">
               <span class="trip-column">${data.trips[i].departure} > ${data.trips[i].arrival}</span>
               <span class="time-column">${data.trips[i].hour}</span>
-              <span class="price-column">${data.trips[i].price}€</span>
+              <span class="price-column">${data.trips[i].price} €</span>
               <span class="delai-column">Departure in ${delai.getHours()} hours</span>
             </div>`
         }
